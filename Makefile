@@ -395,7 +395,7 @@ define switch_ram_base_func
 	echo "RAM_BASE := $(1)"                                             >> $(OBJ_BASE)/Makeconf.ram_base
 endef
 
-BUILDDIR_SEARCHPATH = $(OBJ_BASE)/bin/$(ARCH)_$(CPU):$(OBJ_BASE)/bin/$(ARCH)_$(CPU)/$(BUILD_ABI):$(OBJ_BASE)/lib/$(ARCH)_$(CPU):$(OBJ_BASE)/lib/$(ARCH)_$(CPU)/$(BUILD_ABI)
+BUILDDIR_SEARCHPATH = $(OBJ_BASE)/bin/$(ARCH)_$(CPU):$(OBJ_BASE)/bin/$(ARCH)_$(CPU)/$(BUILD_ABI):$(OBJ_BASE)/lib/$(ARCH)_$(CPU):$(OBJ_BASE)/lib/$(ARCH)_$(CPU)/$(BUILD_ABI):$(OBJ_BASE)/conf:$(OBJ_BASE)/prebuilt
 
 QEMU_ARCH_MAP_$(ARCH) = qemu-system-$(ARCH)
 QEMU_ARCH_MAP_x86     = $(strip $(shell if qemu-system-i386 -version > /dev/null; then echo qemu-system-i386; else echo qemu; fi))
